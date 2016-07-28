@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>react</title>
+    <script src="../assets/js/react.min.js"></script>
+    <script src="../assets/js/react-dom.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+  </head>
+  <body>
+     <div id="example"></div>
+     <script type="text/babel">
+
+        var HelloMessage = React.createClass({
+          getInitialState: function() {
+            return {
+              flag : true
+            };
+          },
+          handleclick:function(){
+            this.setState({
+                flag:!this.state.flag
+            });
+          },
+          render: function() {
+            var text = this.state.flag ? '是的' : '不是';
+            return (
+                <p onClick={this.handleclick} >钟斌斌是猪吗 {text}</p>
+            );
+          }
+
+        });
+        var title = 123;
+        ReactDOM.render(
+          <HelloMessage />,
+          document.getElementById('example')
+        );
+     </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>react</title>
+    <script src="../assets/js/react.min.js"></script>
+    <script src="../assets/js/react-dom.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+  </head>
+  <body>
+     <div id="example"></div>
+     <script type="text/babel">
+
+        var HelloMessage = React.createClass({
+          render: function() {
+            return (
+              <ol>{
+                React.Children.map(this.props.children,function(child){
+                  return <li>{child}</li>
+                })
+              }</ol>
+            );
+          }
+
+        });
+        ReactDOM.render(
+          <HelloMessage>
+            <span>hello,willmin</span>
+            <span>hello,wlm</span>
+          </HelloMessage>,
+          document.getElementById('example')
+        );
+     </script>
+  </body>
+</html>
